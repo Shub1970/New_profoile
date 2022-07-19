@@ -389,20 +389,10 @@ section {
 .about-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 650px 250px;
+      grid-template-columns: 650px 250px;
   padding-top: 3.5rem;
   padding-bottom: 5rem;
-}
-
-.about-container .right-about {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  grid-gap: 2rem;
 }
 
 .about-container .right-about .about-item {
@@ -460,7 +450,6 @@ section {
 }
 
 .about-container .left-about {
-  padding-right: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
