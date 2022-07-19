@@ -63,15 +63,6 @@ section {
   transform: translateX(-100%) scale(0);
 }
 
-.s2 {
-  background-color: #f56692;
-}
-.s3 {
-  background-color: rgb(214, 129, 18);
-}
-.s4 {
-  background-color: aqua;
-}
 .active {
   display: block;
   animation: appear 1s ease-in-out;
@@ -332,6 +323,7 @@ section {
 }
 
 .skill-container {
+  padding-top: 10px;
   height: 120px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -364,4 +356,75 @@ section {
 .reveal.active {
   transform: translateX(0);
   opacity: 1;
+}
+//work on portfolio section
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin-top: 3rem;
+  .portfolio-item {
+    position: relative;
+    border-radius: 15px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .hover-item {
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.4s ease-in-out;
+      h3 {
+        font-size: 1.5rem;
+        color: var(--color-white);
+        margin-bottom: 1.5rem;
+      }
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          background-color: var(--color-primary);
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 1rem;
+          cursor: pointer;
+          transition: all 0.4s ease-in-out;
+          i {
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin: 0 1rem;
+          }
+          &:hover {
+            background-color: var(--color-white);
+            i {
+              color: var(--color-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.portfolio-item:hover .hover-item {
+  opacity: 1;
+  transform: scale(1);
 }
