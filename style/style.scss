@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  list-style: none;
 }
 :root {
   --color-primary: #191d2b;
@@ -51,19 +52,17 @@ a {
   font-family: inherit;
 }
 section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 3rem 18rem;
+  padding: 3rem 12rem; //here defaut is 15rem but i change with my prepective
 }
 .section {
   transform: translateX(-100%) scale(0);
 }
-.s1 {
-  background-color: #27ae60;
-}
+
 .s2 {
   background-color: #f56692;
 }
@@ -203,7 +202,7 @@ section {
     }
   }
 }
-//*independent  components*//
+//*independent  components*// resuma btn
 .main-btn {
   border-radius: 30px;
   color: inherit;
@@ -242,4 +241,132 @@ section {
       transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
     }
   }
+}
+
+//work on about section//
+//starting again, going to complete about sectionn
+.main-title {
+  text-align: center;
+  h2 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+    span {
+      color: var(--color-secondary);
+    }
+    .bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: var(--color-grey-5);
+      transition: all 0.4s ease-in-out;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      font-weight: 800;
+      font-size: 5.3rem;
+    }
+  }
+}
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+  .right-about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    .about-item {
+      border: 1px solid var(--color-grey-5);
+      border-radius: 5px;
+      transition: all 0.4s ease-in-out;
+      box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+      &:hover {
+        cursor: default;
+        transform: translateY(-5px);
+        border: 1px solid var(--color-secondary);
+        box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.32);
+      }
+      .abt-text {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        .large-text {
+          font-size: 3rem;
+          font-weight: 700;
+          color: var(--color-secondary);
+        }
+        .small-text {
+          padding-left: 3rem;
+          position: relative;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          color: var(--color-grey-1);
+          letter-spacing: 2px;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 2rem;
+            height: 2px;
+            background-color: palevioletred;
+          }
+        }
+      }
+    }
+  }
+  .left-about {
+    padding-right: 5rem;
+    p {
+      line-height: 2rem;
+      padding: 1rem;
+      color: var(--color-grey-1);
+    }
+    h4 {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.skill-container {
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 8px;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  position: relative;
+  .skill-box {
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 80px;
+    &:hover {
+      transform: scale(1.05);
+      i {
+        color: var(--color);
+      }
+    } ///not able to translate do from Y-axies
+  }
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translateY(-120px);
+    transition: all 10s ease-in-out;
+  }
+}
+//skill-container reaval transition
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
 }

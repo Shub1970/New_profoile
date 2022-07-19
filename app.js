@@ -7,6 +7,9 @@ function PageTransitions() {
   for (let x = 0; x < botton.length; x++) {
     botton[x].addEventListener("click", function () {
       let currentBtn = document.querySelector(".active-btn");
+
+      var reveals = document.querySelectorAll(".reveal");
+      reveals[0].classList.remove("active"); //need to add because in page transition from about to any where classList fo skill-container contain active
       currentBtn.className = currentBtn.className.replace("active-btn", "");
       this.className += " active-btn";
     });
@@ -30,3 +33,20 @@ function PageTransitions() {
 }
 
 PageTransitions();
+
+//skill box reveal function
+window.addEventListener("scroll", reveal);
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 30;
+    console.log(elementTop, windowHeight);
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
