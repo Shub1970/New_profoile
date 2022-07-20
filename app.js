@@ -2,7 +2,23 @@ const bottons = document.querySelectorAll(".controls");
 const botton = document.querySelectorAll(".control");
 const allSections = document.querySelector("body");
 const section = document.querySelectorAll(".section");
-
+window.onload = function () {
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      emailjs.sendForm("service_goh836j", "template_cbw414o", this).then(
+        function () {
+          var status_form = document.querySelector(".successfull-submit");
+          status_form.classList.add("active");
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+      document.getElementById("contact-form").reset();
+    });
+};
 function PageTransitions() {
   for (let x = 0; x < botton.length; x++) {
     botton[x].addEventListener("click", function () {

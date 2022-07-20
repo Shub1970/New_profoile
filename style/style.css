@@ -620,6 +620,21 @@ section {
           transform: scale(1);
 }
 
+.successfull-submit {
+  text-align: center;
+  color: #f1ee0d;
+  z-index: 20;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.4 cubic-bezier(0.36, -0.47, 0.76, 1.66);
+  transition: all 0.4 cubic-bezier(0.36, -0.47, 0.76, 1.66);
+}
+
+.successfull-submit .active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .contact-content-con {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -772,8 +787,23 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-content-con .right-contact .submit-btn button {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--color-grey-5);
+  border: 1px solid #27ae60;
+  color: var(--color-white);
+  -webkit-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
+}
+
+.contact-content-con .right-contact .submit-btn button:hover {
+  background: #27ae60;
 }
 /*# sourceMappingURL=style.css.map */

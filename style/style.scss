@@ -428,6 +428,17 @@ section {
   opacity: 1;
   transform: scale(1);
 }
+//sucessfull-submit active
+.successfull-submit {
+  text-align: center;
+  color: rgb(241, 238, 13);
+  z-index: 20;
+  transform: scale(0);
+  transition: all 0.4 cubic-bezier(0.36, -0.47, 0.76, 1.66);
+  .active {
+    transform: scale(1);
+  }
+}
 
 //work on contact page
 .contact-content-con {
@@ -525,7 +536,19 @@ section {
     }
     .submit-btn {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      button {
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        background: var(--color-grey-5);
+        border: 1px solid #27ae60;
+        color: var(--color-white);
+        transition: background 0.4s ease-in-out;
+        &:hover {
+          background: #27ae60;
+        }
+      }
     }
   }
 }
